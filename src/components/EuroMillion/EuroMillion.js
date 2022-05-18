@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import finalResults from "../../utils/euromillion";
 
 function EuroMillion({ data }) {
-  const [displayResult, setDisplayResult] = useState([]);
+  const numeros = data[0];
+  const numerosStar = data[1];
+  const [displayNumbers, setDisplayNumbers] = useState(finalResults(numeros));
+  const [displayStars, setDisplayStars] = useState(finalResults(numerosStar));
   const clickHandler = () => {
-    setDisplayResult(finalResults(data));
+    setDisplayNumbers(finalResults(numeros));
+    setDisplayStars(finalResults(numerosStar));
   };
   return (
     <div>
@@ -15,9 +19,8 @@ function EuroMillion({ data }) {
         </button>
       </section>
       <div id="resultats">
-        {displayResult.map((result, index) => (
-          <div key={index}>{result.join()}</div>
-        ))}
+        <p>Numéros : {displayNumbers.join()}</p>
+        <p>Numeros étoiles : {displayStars.join()}</p>
       </div>
     </div>
   );

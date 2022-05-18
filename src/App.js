@@ -31,7 +31,7 @@ function App() {
     "loading"
   ) : (
     <div className="App">
-      <h1>Euromillion</h1>
+      <h1>Euromillions</h1>
       <EuroMillion data={data} />
     </div>
   );

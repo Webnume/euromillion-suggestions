@@ -1,10 +1,24 @@
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  margin: 3rem 0;
+}
+#resultats {
+  border: 1px solid;
+  padding: 1.5rem;
+  line-height: 1.8rem;
+  width: 50vw;
+}
+#resultats:empty {
+  border: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {

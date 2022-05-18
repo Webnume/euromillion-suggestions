@@ -1,5 +1,4 @@
-// // Palmares numeros
-// const numeroAvecnombreDeSortiesOld = {
+// const numeroAvecnombreDeSortiesMocked = {
 //   1: 22,
 //   2: 28,
 //   3: 16,
@@ -53,7 +52,7 @@
 // };
 
 // // Palmares étoiles
-// const etoileAvecnombreDeSortiesOld = {
+// const etoileAvecnombreDeSortiesMocked = {
 //   1: 32,
 //   2: 48,
 //   3: 43,
@@ -69,20 +68,20 @@
 // };
 
 // Etape 1 : Ajout des chiffres autant de fois que leur probabilité dans un tableau
+
 function tableauNumerosProbabilite(Objet) {
-  var listesNumeros = [];
+  const listesNumeros = [];
   for (const [key, value] of Object.entries(Objet)) {
-    for (var i = 0; i < value; i++) {
+    for (let i = 0; i < value; i++) {
       listesNumeros.push(key);
     }
   }
-  // console.log(listesNumeros)
   return listesNumeros;
 }
 
 // Etape 2 : Mélange du tableau de chiffres
 function shuffle(a) {
-  var j, x, i;
+  let j, x, i;
   for (i = a.length - 1; i > 0; i--) {
     j = Math.floor(Math.random() * (i + 1));
     x = a[i];
@@ -95,7 +94,7 @@ function shuffle(a) {
 // Etape 3 : Création d'un tableau de taille personnalisable et remplissage avec des nombres uniques
 function jouerXChiffres(tab, tablength) {
   const meschiffres = [];
-  for (var i = 0; meschiffres.length < tablength; i++) {
+  for (let i = 0; meschiffres.length < tablength; i++) {
     if (meschiffres.indexOf(tab[i]) === -1) {
       meschiffres.push(tab[i]);
     }
@@ -107,59 +106,35 @@ function jouerXChiffres(tab, tablength) {
   return meschiffres;
 }
 
+// Transform Scrapped data stats to Object
+const formatData = (arr) => {
+  const dataz = {};
+  new Array(arr.length)
+    .fill(null)
+    .forEach(
+      (itm, i) =>
+        (dataz[i + 1] = +(arr.length === 50
+          ? arr[i].nombreDeSorties
+          : arr[i].nombreDeSortiesStars))
+    );
+  return dataz;
+};
+
 // render
-
 export default function finalResults(data) {
-  // console.log("xxx:" + JSON.stringify(data));
-  const numeroAvecnombreDeSorties = {
-    1: 22,
-    2: 28,
-    3: 16,
-    4: 28,
-    5: 16,
-  };
-
+  // Palmares numeros
+  const numeroAvecnombreDeSorties = formatData(data[0]);
   // Palmares étoiles
-  const etoileAvecnombreDeSorties = {
-    1: 32,
-    2: 48,
-    3: 43,
-  };
+  const etoileAvecnombreDeSorties = formatData(data[1]);
 
-  const formatData = () => {
-    const numbersArr = [];
-    //   for (const value of data) {
-    //     numbersArr.push`${value[0].numero}: ${value[0].nombreDeSorties}`;
-    //   }
-
-    for (let i = 0; i < data[0].length; i++) {
-      console.log(data[0][i].numero+":"+data[0][i].nombreDeSorties);
-      // numbersArr.push(data[0]);
-      
-    }
-
-    return numbersArr;
-  };
-  console.log(formatData());
-  
-  let result = "";
+  let results = [];
   const tabNum = tableauNumerosProbabilite(numeroAvecnombreDeSorties);
   const tabEtoiles = tableauNumerosProbabilite(etoileAvecnombreDeSorties);
 
   for (var i = 0; i < 10; i++) {
     shuffle(tabNum);
     shuffle(tabEtoiles);
-    // console.log(jouerXChiffres(tabNum, 5) + ' |||||| ' + jouerXChiffres(tabEtoiles, 2));
-
-    result +=
-      jouerXChiffres(tabNum, 5) +
-      " |||||| " +
-      jouerXChiffres(tabEtoiles, 2) +
-      " </br>";
+    results.push(jouerXChiffres(tabNum, 5), jouerXChiffres(tabEtoiles, 2));
   }
-  return result;
-
-  // document.getElementById("resultats").innerHTML = result;
+  return results;
 }
-
-// document.getElementById("myBtn").addEventListener("click", finalResults);

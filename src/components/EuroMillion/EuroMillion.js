@@ -16,7 +16,7 @@ function EuroMillion({ data }) {
     setShake(true);
 
     // Buttons stops to shake after 2 seconds
-    setTimeout(() => setShake(false), 2000);
+    setTimeout(() => setShake(false), 1000);
   };
   return (
     <div>

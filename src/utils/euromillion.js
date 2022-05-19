@@ -58,10 +58,10 @@ export default function finalResults(data) {
   const numeroAvecnombreDeSorties = scrapedArrayToObj(data);
   // Adding and shuffling
   const ArrayNum = ArrayProbabilityNumbers(numeroAvecnombreDeSorties);
-  shuffle(ArrayNum);
-
   let results = [];
-  results.push(jouerXChiffres(ArrayNum, numberOfNumbers));
-
+  for (let i = 0; i < 10; i++) {
+    shuffle(ArrayNum);
+    results.push(jouerXChiffres(ArrayNum, numberOfNumbers));
+  }
   return results;
 }

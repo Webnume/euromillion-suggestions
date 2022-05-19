@@ -4,6 +4,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+p {
+  margin: 0;
+}
 .App {
   text-align: center;
 }

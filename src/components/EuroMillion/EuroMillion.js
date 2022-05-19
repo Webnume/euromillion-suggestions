@@ -19,8 +19,19 @@ function EuroMillion({ data }) {
         </button>
       </section>
       <div id="resultats">
-        <p>Numéros : {displayNumbers.join()}</p>
-        <p>Numeros étoiles : {displayStars.join()}</p>
+        
+        <p>
+          {displayNumbers.map((num) => {
+            return <p>{`Numéros : ${num}`}</p>;
+          })}
+          <br></br>
+        </p>
+        <p>
+          {displayStars.map((num) => (
+            <p>{`Etoiles : ${num}`}</p>
+          ))}
+        </p>
+        {/* <p>Numeros étoiles : {displayStars.join()}</p> */}
       </div>
     </div>
   );

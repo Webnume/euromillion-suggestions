@@ -59,7 +59,7 @@ export default function finalResults(data) {
   // Adding and shuffling
   const ArrayNum = ArrayProbabilityNumbers(numeroAvecnombreDeSorties);
   let results = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     shuffle(ArrayNum);
     results.push(jouerXChiffres(ArrayNum, numberOfNumbers));
   }

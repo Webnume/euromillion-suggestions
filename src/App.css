@@ -5,51 +5,83 @@ body {
   justify-content: center;
 }
 p {
-  margin: 0;
+  margin: 0.2rem 0;
+}
+h2 {
+  background-color: #61dafb;
+}
+b {
+  background-color: #61dafb;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
 }
 .App {
   text-align: center;
 }
-
-button {
-  margin: 3rem 0;
+.combinaison {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+}
+.btn-three {
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-three::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #07485a28;
+  transition: all 0.3s;
+}
+.btn-three:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+.btn-three::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid #61dafb;
+  transform: scale(1.2, 1.2);
+}
+.btn-three:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 #resultats {
   border: 1px solid;
   padding: 1.5rem;
   line-height: 1.8rem;
   width: 50vw;
+  box-shadow: 20px 20px 32px 1px rgb(0 0 0 / 71%);
 }
 #resultats:empty {
   border: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shake {
+  background-color: aquamarine;
+  opacity: 1;
+  transform: scale(1, 1);
 }

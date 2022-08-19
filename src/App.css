@@ -7,6 +7,12 @@ body {
 p {
   margin: 0.2rem 0;
 }
+h1 {
+  background-color: #282d87;
+  color: white;
+  padding: 1rem;
+  width: 100vw;
+}
 h2 {
   background-color: #282d87;
   color: white;

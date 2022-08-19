@@ -1,5 +1,7 @@
 # Euromillion suggests numbers
 
+Try it : [Live Demo](https://curious-palmier-d08c6b.netlify.app/)
+
 ### [ENG]
 
 This app is made for you if you need of inspiration

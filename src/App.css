@@ -96,8 +96,8 @@ b {
   justify-content: space-evenly;
 }
 .main-right {
-  width: 20vw;
   margin-left: 2rem;
+  width: clamp(20vw,50vw,330px);
 }
 #resultats {
   line-height: 1.8rem;
@@ -132,5 +132,9 @@ b {
   .main-right {
     width: 100%;
     margin-left: unset;
+  }
+  h1 {
+    padding: 1vw 0;
+    width: auto;
   }
 }

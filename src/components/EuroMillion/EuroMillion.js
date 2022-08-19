@@ -19,37 +19,39 @@ function EuroMillion({ data }) {
     setTimeout(() => setShake(false), 1000);
   };
   return (
-    <div>
+    <div className="main">
       {" "}
-      <section className="combinaison">
-        D'autres combinaisons ?{" "}
-        <div
-          id="myBtn"
-          onClick={clickHandler}
-          className={"btn btn-three " + (shake ? "shake" : null)}
-        >
-          <span>Click me</span>
-        </div>
-      </section>
+      <div className="main-right">
+        <section className="combinaison">
+          D'autres combinaisons ?{" "}
+          <div
+            id="myBtn"
+            onClick={clickHandler}
+            className={"btn btn-three " + (shake ? "shake" : null)}
+          >
+            <span> {"> Cliquez ici <"} </span>
+          </div>
+        </section>
+      </div>
       <div id="resultats">
-        <h2>Les numéros :</h2>
-        <p>
+        <div className="numbers">
+          <h2>Les numéros</h2>
           {displayNumbers.map((num, i) => {
             return (
-              <p>
-                <b>Proposition n° {i + 1}</b> : {num.join(", ")}
+              <p key={i}>
+                <b>Proposition {i + 1}</b> {num.join(" / ")}
               </p>
             );
           })}
-        </p>
-        <h2>Les numéros étoiles:</h2>
-        <p>
+        </div>
+        <div className="stars">
+          <h2>Les étoiles</h2>
           {displayStars.map((num, i) => (
-            <p>
-              <b>Proposition étoiles n° {i + 1}</b> : {num.join(", ")}
+            <p key={i}>
+              <b>Proposition {i + 1}</b> {num.join(" / ")}
             </p>
           ))}
-        </p>
+        </div>
         {/* <p>Numeros étoiles : {displayStars.join()}</p> */}
       </div>
     </div>

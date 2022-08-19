@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/`, {
+    fetch(`https://euromilion.herokuapp.com/`, {
       method: "GET",
       headers: new Headers(),
       mode: "cors",
@@ -31,7 +31,7 @@ function App() {
     "loading"
   ) : (
     <div className="App">
-      <h1>Euromillions</h1>
+      <h1>Suggestions de numéros Euromillions </h1>
       <EuroMillion data={data} />
     </div>
   );

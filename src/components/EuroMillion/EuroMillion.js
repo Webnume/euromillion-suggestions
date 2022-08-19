@@ -23,7 +23,7 @@ function EuroMillion({ data }) {
       {" "}
       <div className="main-right">
         <section className="combinaison">
-          D'autres combinaisons ?{" "}
+          <b>D'autres combinaisons ?</b>
           <div
             id="myBtn"
             onClick={clickHandler}
@@ -32,6 +32,20 @@ function EuroMillion({ data }) {
             <span> {"> Cliquez ici <"} </span>
           </div>
         </section>
+        <img src="/au-revoir-president.gif" alt="" />
+        <p className="description">
+          <b>[FR]</b> Cette appli est faite pour vous si vous êtes en mal
+          d'inspiration pour choisir vos numéros Euromillions. L'algorithme
+          repose sur les probabilités de sorties des numéros. Ces numéros sont
+          mis à jour automatiquement à chaque résultat 2 fois par semaine. Bonne
+          chance ! Jouez raisonnablement svp.
+        </p>
+        <p className="description">
+          <b>[ENG]</b> This app is made for you if you need of inspiration
+          to choose your Euromillions numbers. The algorithm is based on the output
+          probabilities of the numbers. These numbers are updated automatically
+          with each result twice a week. Good luck ! Please play reasonably.
+        </p>
       </div>
       <div id="resultats">
         <div className="numbers">

@@ -1,17 +1,23 @@
 # Euromillion suggests numbers
 
 ### [ENG]
-This app is made for those who are in need of inspiration to choose Euromillions numbers. The numbers are updated automatically with each result twice a week. The algorithm is based on the output probabilities of the numbers.
-Good luck ! 
+
+This app is made for you if you need of inspiration
+to choose your Euromillions numbers. The algorithm is based on the output
+probabilities of the numbers. These numbers are updated automatically
+with each result twice a week. Good luck !
 
 Please play reasonably.
 
 ### [FR]
-Cette appli est faite pour ceux qui sont en mal d'inspiration pour choisir des numéros Euromillions. Les nombres sont mis à jour automatiquement à chaque résultat 2 fois par semaine. L'algorithme repose sur les probabilités de sorties des nombres.
-Bonne chance ! 
 
-Jouer raisonnablement svp.
+Cette appli est faite pour vous si vous êtes en mal
+d'inspiration pour choisir vos numéros Euromillions. L'algorithme
+repose sur les probabilités de sorties des numéros. Ces numéros sont
+mis à jour automatiquement à chaque résultat 2 fois par semaine. Bonne
+chance !
 
+Jouez raisonnablement svp.
 
 ## Available Scripts
 

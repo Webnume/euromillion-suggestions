@@ -4,7 +4,7 @@ Try it : [Live Demo](https://curious-palmier-d08c6b.netlify.app/)
 
 ### [ENG]
 
-This app is made for you if you need of inspiration
+This app is made for you if you need inspiration
 to choose your Euromillions numbers. The algorithm is based on the output
 probabilities of the numbers. These numbers are updated automatically
 with each result twice a week. Good luck !

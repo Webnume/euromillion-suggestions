@@ -28,7 +28,9 @@ function App() {
   }, []);
 
   return loading ? (
-    "loading"
+    <div className="App" style={{ flexDirection: "unset" }}>
+      <span className="loader"></span>
+    </div>
   ) : (
     <div className="App">
       <h1>Suggestions de numéros Euromillions </h1>

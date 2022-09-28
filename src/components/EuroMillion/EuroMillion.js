@@ -23,7 +23,7 @@ function EuroMillion({ data }) {
       {" "}
       <div className="main-right">
         <section className="combinaison">
-          <b style={{ marginBottom: "1rem" }}>D'autres combinaisons ?</b>
+          <b style={{ marginBottom: ".2rem" }}>D'autres combinaisons ?</b>
           <div
             id="myBtn"
             onClick={clickHandler}
@@ -53,7 +53,7 @@ function EuroMillion({ data }) {
           {displayNumbers.map((num, i) => {
             return (
               <p key={i}>
-                <b>Proposition {i + 1}</b> {num.join(" / ")}
+                <b style={{ marginRight: "1rem" }}>Proposition {i + 1}</b> {num.join(" / ")}
               </p>
             );
           })}
@@ -62,7 +62,7 @@ function EuroMillion({ data }) {
           <h2>Les étoiles</h2>
           {displayStars.map((num, i) => (
             <p key={i}>
-              <b>Proposition {i + 1}</b> {num.join(" / ")}
+              <b style={{ marginRight: "1rem" }}>Proposition {i + 1}</b> {num.join(" / ")}
             </p>
           ))}
         </div>

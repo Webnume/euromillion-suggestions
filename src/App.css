@@ -143,6 +143,9 @@ b {
   #resultats {
     width: 100%;
   }
+  .numbers, .stars {
+    padding: 0 2rem;
+  }
 }
 
 .loader {

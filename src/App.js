@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://euromilion.herokuapp.com/`, {
+    fetch(`https://euromillion-suggestions-backend.onrender.com`, {
       method: "GET",
       headers: new Headers(),
       mode: "cors",

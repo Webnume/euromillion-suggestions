@@ -9,9 +9,9 @@ function App() {
   useEffect(() => {
     fetch('https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json', {
       method: "GET",
-      headers: new Headers(),
+      // headers: new Headers(),
       // mode: "cors",
-      cache: "default",
+      // cache: "default",
     }).then((response) =>
       response
         .json()

@@ -2,18 +2,12 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import EuroMillion from "./components/EuroMillion/EuroMillion";
 
-
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch('https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json'
-    // , {
-    //   method: "GET",
-      // headers: new Headers(),
-      // mode: "cors",
-      // cache: "default",
-    // }
+    fetch(
+      "https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json"
     ).then((response) =>
       response
         .json()
@@ -28,7 +22,7 @@ function App() {
         })
     );
   }, []);
-// console.log(new Headers());
+  // console.log(new Headers());
   return loading ? (
     <div className="App" style={{ flexDirection: "unset" }}>
       <span className="loader"></span>

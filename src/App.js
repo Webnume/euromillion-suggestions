@@ -9,8 +9,8 @@ function App() {
   useEffect(() => {
     fetch('https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json', {
       method: "GET",
-      headers: new Headers(),
-      mode: "cors",
+      // headers: new Headers(),
+      // mode: "cors",
       cache: "default",
     }).then((response) =>
       response
@@ -26,7 +26,7 @@ function App() {
         })
     );
   }, []);
-
+// console.log(new Headers());
   return loading ? (
     <div className="App" style={{ flexDirection: "unset" }}>
       <span className="loader"></span>

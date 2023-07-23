@@ -2,12 +2,12 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import EuroMillion from "./components/EuroMillion/EuroMillion";
 
+
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    fetch(`https://euromillion-suggestions-backend.onrender.com`, {
+    fetch('https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json', {
       method: "GET",
       headers: new Headers(),
       mode: "cors",

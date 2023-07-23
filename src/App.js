@@ -7,12 +7,14 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch('https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json', {
-      method: "GET",
+    fetch('https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json'
+    // , {
+    //   method: "GET",
       // headers: new Headers(),
       // mode: "cors",
       // cache: "default",
-    }).then((response) =>
+    // }
+    ).then((response) =>
       response
         .json()
         .then((result) => {

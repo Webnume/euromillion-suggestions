@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch(
-      "https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave.json"
+      "https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave"
     ).then((response) =>
       response
         .json()

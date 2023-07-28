@@ -24,9 +24,14 @@ function App() {
   }, []);
   // console.log(new Headers());
   return loading ? (
-    <div className="App" style={{ flexDirection: "unset" }}>
-      <span className="loader"></span>
-    </div>
+    <>
+      <div className="App" style={{ flexDirection: "unset" }}>
+        <span className="loader"></span>
+      </div>
+      <span style={{ position: "fixed", top: "50%", left: "33%" }}>
+        This app is on a free hosting , so it may take a few seconds to wake up
+      </span>
+    </>
   ) : (
     <div className="App">
       <h1>Suggestions de numéros Euromillions </h1>

@@ -6,20 +6,19 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(
-      "https://euromillion-suggestions-backend.onrender.com/ScrapedDataSave"
-    ).then((response) =>
-      response
-        .json()
-        .then((result) => {
-          // console.log(result);
-          setData(result);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.log(error);
-          setLoading(false);
-        })
+    fetch("https://euromillion-suggestions-backend.onrender.com/").then(
+      (response) =>
+        response
+          .json()
+          .then((result) => {
+            // console.log(result);
+            setData(result);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.log(error);
+            setLoading(false);
+          })
     );
   }, []);
   // console.log(new Headers());

@@ -32,7 +32,7 @@ function EuroMillion({ data }) {
             <span> {"> Cliquez ici <"} </span>
           </div>
         </section>
-        <img src="/au-revoir-president.gif" alt="" />
+        <img src="/au-revoir-president.gif" alt="" loading="lazy"/>
         <p className="description">
           <b>[FR]</b> Cette appli est faite pour vous si vous êtes en mal
           d'inspiration pour choisir vos numéros Euromillions. L'algorithme

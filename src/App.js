@@ -5,23 +5,37 @@ import EuroMillion from "./components/EuroMillion/EuroMillion";
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [lastUpdate, setLastUpdate] = useState("");
+  // https://euromillion-suggestions-backend.onrender.com/
   useEffect(() => {
-    fetch("https://euromillion-suggestions-backend.onrender.com/").then(
-      (response) =>
-        response
-          .json()
-          .then((result) => {
-            // console.log(result);
-            setData(result);
-            setLoading(false);
-          })
-          .catch((error) => {
-            console.log(error);
-            setLoading(false);
-          })
+    fetch("http://localhost:3003").then((response) =>
+      response
+        .json()
+        .then((result) => {
+          // console.log(result);
+          setData(result);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          setLoading(false);
+        })
     );
   }, []);
-  // console.log(new Headers());
+
+  useEffect(() => {
+    const getLastUpdate = async (data) => {
+      const datesArray = await data[0].map((elem) => elem.dateDeSorties);
+      const datesFormatted = datesArray.map((elem) => {
+        const date = elem.split("/");
+        return new Date(20 + date[2], date[1] - 1, date[0]);
+      });
+      const maxDate = new Date(Math.max(...datesFormatted));
+      data && setLastUpdate(maxDate.toLocaleDateString("fr-FR",{year: 'numeric', month: 'long', day: 'numeric'} ));
+    };
+    data && getLastUpdate(data);
+  }, [data]);
+
   return loading ? (
     <>
       <div className="App" style={{ flexDirection: "unset" }}>
@@ -35,6 +49,8 @@ function App() {
     <div className="App">
       <h1>Suggestions de numéros Euromillions </h1>
       <EuroMillion data={data} />
+      <br />
+      Dernière mise à jour / Last update: {lastUpdate}
     </div>
   );
 }

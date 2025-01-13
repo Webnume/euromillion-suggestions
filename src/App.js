@@ -6,9 +6,9 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState("");
-  
+  // https://euromillion-suggestions-backend.onrender.com/
   useEffect(() => {
-    fetch("https://euromillion-suggestions-backend.onrender.com/").then((response) =>
+    fetch("http://localhost:3003/").then((response) =>
       response
         .json()
         .then((result) => {
@@ -31,7 +31,14 @@ function App() {
         return new Date(20 + date[2], date[1] - 1, date[0]);
       });
       const maxDate = new Date(Math.max(...datesFormatted));
-      data && setLastUpdate(maxDate.toLocaleDateString("fr-FR",{year: 'numeric', month: 'long', day: 'numeric'} ));
+      data &&
+        setLastUpdate(
+          maxDate.toLocaleDateString("fr-FR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        );
     };
     data && getLastUpdate(data);
   }, [data]);

@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState("");
-  // https://euromillion-suggestions-backend.onrender.com/
+  // https://euromillion-suggestions-backend.onrender.com/ ou http://localhost:3003/
   useEffect(() => {
     fetch("https://euromillion-suggestions-backend.onrender.com/").then((response) =>
       response

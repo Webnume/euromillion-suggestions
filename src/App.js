@@ -9,7 +9,7 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState("");
   // https://euromillion-suggestions-backend.onrender.com/ ou http://localhost:3003/
   useEffect(() => {
-    fetch("http://localhost:3003/").then((response) =>
+    fetch("https://euromillion-suggestions-backend.onrender.com/").then((response) =>
       response
         .json()
         .then((result) => {

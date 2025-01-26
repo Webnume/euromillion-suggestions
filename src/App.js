@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import EuroMillion from "./components/EuroMillion/EuroMillion";
+import React from 'react';
 
 function App() {
   const [data, setData] = useState(null);
@@ -8,7 +9,7 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState("");
   // https://euromillion-suggestions-backend.onrender.com/ ou http://localhost:3003/
   useEffect(() => {
-    fetch("https://euromillion-suggestions-backend.onrender.com/").then((response) =>
+    fetch("http://localhost:3003/").then((response) =>
       response
         .json()
         .then((result) => {
